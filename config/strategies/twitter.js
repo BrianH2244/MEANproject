@@ -10,20 +10,19 @@ module.exports = function() {
         consumerSecret: config.twitter.clientSecret,
         callbackURL: config.twitter.callbackURL,
         passReqToCallback: true
-    },
-    function(req, token, tokenSecret, profile, done) {
-        var providerData = profile._json;
-        providerData.token = token;
-        providerData.tokenSecret = tokenSecret;
-        
-        var providerUserProfile = {
-            fullName: profile.displayName,
-            username: profile.username,
-            provider: 'twitter',
-            providerID: profile.id,
-            providerData: providerData
-        };
-        
-        users.saveOAuthUserProfile(req, providerUserProfile, done);
-    }));
+        },
+        function(req, token, tokenSecret, profile, done) {
+            var providerData = profile._json;
+            providerData.token = token;
+            providerData.tokenSecret = tokenSecret;
+            var providerUserProfile = {
+                fullName: profile.displayName,
+                username: profile.username,
+                provider: 'twitter',
+                providerId: profile.id,
+                providerData: providerData
+            };
+
+            users.saveOAuthUserProfile(req, providerUserProfile, done);
+        }));
 };

@@ -3,20 +3,14 @@ var port = 1337;
 module.exports = {
     port: port,
     db: 'mongodb://localhost/todos',
-    sessionSecret: 'developmentSessionSecret',
     facebook: {
-        clientID: '1643283729258335',
-        clientSecret: '7163e2fa14d088eec97d842f518098c6',
-        callbackURL: 'http://localhost:3000/oauth/facebook/callback'
+        clientID: '168643720142372',
+        clientSecret: '96495948f5f64c4cf855bf6e26d37bfe',
+        callbackURL: 'http://localhost:'+ port +'/oauth/facebook/callback'
     },
     twitter: {
-        clientID: ' gJ9bY65dmrqgKYjy4SkIiKMJk',
-        clientSecret: 'rKpZM6ZBjdBHHf1x8d7dq4lndL1HnQIa3nzX1KcYlyjO0htfOc',
-        callbackURL: 'http://localhost:3000/oauth/twitter/callback'
-    },
-    google: {
-        clientID: '180638535112-inkl8h4sp1e52vh5nbopvi14jth4aikv.apps.googleusercontent.com',
-        clientSecret: 'eCxh6mfPu0mSmBN6eDXGFROl',
-        callbackURL: 'http://localhost:3000/oauth/google/callback'
+        clientID: '6CHHC3ARPmmsDNxhUW8cb6sp3',
+        clientSecret: 'K8vBevcDnFaMzuoNXTcUqWArjj8l0Jg7ROQxc5Qn4JnwWt5ZL9',
+        callbackURL: 'http://localhost:1337/oauth/twitter/callback'
     }
 };
